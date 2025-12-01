@@ -96,7 +96,7 @@ int main(int argc, char * argv[])
 
    // ... so instead, I'll invoke a shell cmd as a convenient alternative to
    // play a .wav sound file...
-   retcode = system("ffplay -nodisp -autoexit -loglevel quiet mixkit-bell-notification-933.wav");
+   retcode = system("ffplay -nodisp -autoexit -loglevel quiet /home/abdullaalmosalmi/bin/mixkit-bell-notification-933.wav");
    if ( retcode == -1 )
    {
       fprintf( stderr,
