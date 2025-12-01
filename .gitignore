@@ -1,0 +1,7 @@
+# Vim-specific temporary files
+*.swp
+
+# Build artifacts
+*.o
+*.lst
+alarm_timer
