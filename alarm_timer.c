@@ -81,7 +81,8 @@ int main(int argc, char * argv[])
    while ( !bAlarm ); // wait for SIGALRM...
 
    // Alarm Time!
-   // Unfortunately, the '\a' tone is the water drop sound effect, which is hard to notice...
+   // Unfortunately, the '\a' tone is brief and frequently heard sound, which is
+   // makes it harder to notice...
    //retcode = printf("\a");
    //fflush(stdout);
    //if ( retcode < 0 )
@@ -93,7 +94,8 @@ int main(int argc, char * argv[])
    //   return MAIN_RETCODE_FAILED_TO_ALARM;
    //}
 
-   // So instead, I'll invoke a shell cmd as a convenient alternative to play a .wav sound file...
+   // ... so instead, I'll invoke a shell cmd as a convenient alternative to
+   // play a .wav sound file...
    retcode = system("ffplay -nodisp -autoexit -loglevel quiet mixkit-bell-notification-933.wav");
    if ( retcode == -1 )
    {
