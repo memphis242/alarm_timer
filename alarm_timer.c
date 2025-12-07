@@ -1,6 +1,7 @@
 // Alarm timer headers
 #include <unistd.h>
 #include <signal.h>
+#include <timer.h>
 // General-purpose headers
 #include <stdio.h>
 #include <assert.h>
@@ -76,6 +77,9 @@ int main(int argc, char * argv[])
       return (int)MAIN_RETCODE_SIGACTION_FAILED;
    }
 
+   // FIXME: alarm() is basically deprecated for this use-case, and POSIX provides
+   //        timer_create(), timer_settime(), and so on as more modern, re-entrant
+   //        alternatives.
    // Start the timer!
    (void)alarm(seconds); // return value doesn't matter...
    while ( !bAlarm ); // wait for SIGALRM...
